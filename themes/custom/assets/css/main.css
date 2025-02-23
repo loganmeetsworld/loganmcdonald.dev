@@ -48,7 +48,6 @@ select:focus {
 /* Theme toggle button styles */
 .theme-toggle {
     background: var(--background-color);
-    border: 1px solid var(--border-color);
     color: var(--text-color);
     border-radius: 50%;
     cursor: pointer;

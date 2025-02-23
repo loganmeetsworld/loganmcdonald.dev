@@ -41,5 +41,6 @@ theme = 'custom'
 
 [minify]
   minifyOutput = true
+
 [taxonomies]
   tag = "tags"
