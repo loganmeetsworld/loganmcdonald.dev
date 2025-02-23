@@ -4,10 +4,10 @@ title = 'Logan McDonald'
 theme = 'custom'
 
 [params]
-  description = "Personal website and blog"
+  description = "Developer and writer sharing thoughts on engineering leadership, public service, and emerging technology."
   author = "Logan McDonald"
-  tagline = "Engineering leader and civil servant building and operating software for the people. This is a place for me to share my thoughts on software, service, and emerging technology."
-  
+  images = ["images/social-preview.svg"]
+
 [menu]
   [[menu.main]]
     name = "Home"

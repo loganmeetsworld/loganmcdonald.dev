@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#ffffff"/>
+  
+  <!-- Purple accent line -->
+  <path d="M0 100 
+           Q300 50, 600 100 
+           T1200 100" 
+        fill="none" 
+        stroke="#8A2BE2" 
+        stroke-width="4"
+        opacity="0.8"/>
+  
+  <!-- Main text -->
+  <text x="100" y="300" 
+        font-family="system-ui, -apple-system, sans-serif" 
+        font-size="72" 
+        font-weight="700"
+        fill="#1a1a1a">Logan McDonald</text>
+  
+  <!-- Subtitle -->
+  <text x="100" y="380" 
+        font-family="system-ui, -apple-system, sans-serif" 
+        font-size="36" 
+        fill="#666666">Developer &amp; Writer</text>
+  
+  <!-- Code symbol -->
+  <g transform="translate(1000, 500) scale(2)" fill="none" stroke="#8A2BE2" stroke-width="2">
+    <path d="M12 8L7 16L12 24" />
+    <path d="M20 8L25 16L20 24" />
+  </g>
+</svg>
