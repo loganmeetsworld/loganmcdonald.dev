@@ -5,22 +5,26 @@
 :root {
     /* Light theme (default) */
     --primary-color: #1a1a1a;
-    --secondary-color: #666666;
+    --secondary-color: #555555; /* Darkened for better contrast */
     --background-color: #ffffff;
-    --accent-color: #8A2BE2;
+    --accent-color: #6200EA; /* Adjusted purple for better contrast */
     --text-color: #1a1a1a;
-    --border-color: #eee;
+    --border-color: #d1d1d1;
+    --link-hover-color: #4A00B0;
+    --focus-outline: #6200EA;
     --spacing-unit: 1rem;
 }
 
 [data-theme="dark"] {
     /* Dark theme */
     --primary-color: #ffffff;
-    --secondary-color: #a0a0a0;
+    --secondary-color: #b0b0b0; /* Lightened for better contrast */
     --background-color: #121212;
-    --accent-color: #9f5dff;
+    --accent-color: #B388FF; /* Lightened purple for dark mode */
     --text-color: #ffffff;
-    --border-color: #333;
+    --border-color: #404040;
+    --link-hover-color: #D1C4E9;
+    --focus-outline: #B388FF;
 }
 
 body {
@@ -29,6 +33,16 @@ body {
     color: var(--text-color);
     background-color: var(--background-color);
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Better form control focus states */
+button:focus, 
+input:focus, 
+textarea:focus, 
+select:focus {
+    outline: 2px solid var(--focus-outline);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(98, 0, 234, 0.1);
 }
 
 /* Theme toggle button styles */
@@ -227,8 +241,9 @@ nav a:hover:after {
 }
 
 .post-content {
-    font-size: 1.1rem;
+    max-width: 70ch;
     line-height: 1.8;
+    font-size: 1.125rem;
 }
 
 .post-content p {
@@ -269,23 +284,34 @@ footer {
 .section-divider svg {
     width: 100%;
     height: auto;
-}/* Enhanced link styles with transitions */
+}
+
+/* Enhanced link styles with transitions */
 a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: all 0.2s ease-in-out;
-    position: relative;
+    color: var(--accent-color);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    transition: all 0.2s ease;
+}
+
+a:hover, a:focus {
+    color: var(--link-hover-color);
+    text-decoration-thickness: 2px;
 }
 
 /* Blog post links */
 .post-preview h3 a {
-    color: var(--primary-color);
     text-decoration: none;
+    background-image: linear-gradient(var(--accent-color), var(--accent-color));
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0 2px;
+    transition: background-size 0.2s;
 }
 
-.post-preview h3 a:hover {
-    color: #8A2BE2;  /* Your purple color */
-    transform: translateX(4px);  /* Subtle slide effect */
+.post-preview h3 a:hover,
+.post-preview h3 a:focus {
+    background-size: 100% 2px;
 }
 
 /* Read more links */

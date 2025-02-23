@@ -1,61 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Primary Meta Tags -->
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
-    <meta name="title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}">
-    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
-    <meta property="og:url" content="{{ .Permalink }}">
-    <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}">
-    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
-    <meta property="og:image" content="{{ .Site.BaseURL }}images/social-preview.svg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="{{ .Permalink }}">
-    <meta property="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}">
-    <meta property="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
-    <meta property="twitter:image" content="{{ .Site.BaseURL }}images/social-preview.svg">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=1">
-    
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap">
-    {{ $style := resources.Get "css/main.css" }}
-    {{ with $style }}
-    <link rel="stylesheet" href="{{ .RelPermalink }}">
-    {{ end }}
-    <script>
-        // Check for saved theme preference, otherwise use system preference
-        const getPreferredTheme = () => {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                return savedTheme;
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Primary Meta Tags -->
+        <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+        <meta name="title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}">
+        <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+        <meta name="author" content="{{ .Site.Params.author }}">
+        
+        <!-- Open Graph / Facebook / LinkedIn -->
+        <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+        <meta property="og:url" content="{{ .Permalink }}">
+        <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}">
+        <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+        <meta property="og:image" content="{{ .Site.BaseURL }}images/social-preview.png">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:locale" content="en_US">
+        
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:url" content="{{ .Permalink }}">
+        <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}">
+        <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+        <meta name="twitter:image" content="{{ .Site.BaseURL }}images/social-preview.png">
+        
+        <!-- Structured Data for Blog Posts -->
+        {{ if and (eq .Type "blog") (not .IsHome) }}
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": "{{ .Title }}",
+            "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+            "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+            "author": {
+                "@type": "Person",
+                "name": "{{ .Site.Params.author }}"
+            },
+            "description": "{{ with .Description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}",
+            "url": "{{ .Permalink }}",
+            {{ with .Params.tags }}"keywords": {{ . | jsonify }},{{ end }}
+            "image": "{{ .Site.BaseURL }}images/social-preview.png",
+            "publisher": {
+                "@type": "Person",
+                "name": "{{ .Site.Params.author }}"
             }
-            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        };
+        }
+        </script>
+        {{ end }}
+        
+        <!-- Structured Data for Homepage -->
+        {{ if .IsHome }}
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "{{ .Site.Title }}",
+            "url": "{{ .Site.BaseURL }}",
+            "description": "{{ .Site.Params.description }}",
+            "author": {
+                "@type": "Person",
+                "name": "{{ .Site.Params.author }}",
+                "url": "{{ .Site.BaseURL }}"
+            }
+        }
+        </script>
+        {{ end }}
+    
+        <!-- Existing head content -->
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap">
+        {{ $style := resources.Get "css/main.css" }}
+        {{ with $style }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}">
+        {{ end }}
+        <script>
+            // Check for saved theme preference, otherwise use system preference
+            const getPreferredTheme = () => {
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme) {
+                    return savedTheme;
+                }
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            };
 
-        // Apply theme
-        const setTheme = (theme) => {
-            document.documentElement.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
-        };
+            // Apply theme
+            const setTheme = (theme) => {
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+            };
 
-        // Initial theme setup
-        setTheme(getPreferredTheme());
-    </script>
-</head>
+            // Initial theme setup
+            setTheme(getPreferredTheme());
+        </script>
+    </head>
 <body>
+
     {{ partial "header.html" . }}
-    <main>
+    
+    <main id="main-content" tabindex="-1">
         {{ block "main" . }}{{ end }}
     </main>
+
     {{ partial "footer.html" . }}
+    
+    <!-- Screen reader only class -->
+    <style>
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+    </style>
 </body>
 </html>

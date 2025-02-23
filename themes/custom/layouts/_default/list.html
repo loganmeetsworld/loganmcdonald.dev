@@ -1,17 +1,17 @@
 {{ define "main" }}
 <div class="container">
-    <header class="blog-header">
-        <h1>{{ .Title }}</h1>
+    <header>
+        <h1 id="blog-title">{{ .Title }}</h1>
     </header>
-    <div class="blog-list">
+    <div class="blog-list" role="feed" aria-labelledby="blog-title">
         {{ range .Pages }}
-        <article class="blog-preview">
-            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-            <time>{{ .Date.Format "January 2, 2006" }}</time>
-            <div class="summary">
-                {{ .Summary }}
-            </div>
-            <a href="{{ .RelPermalink }}" class="read-more">Continue reading →</a>
+        <article class="post-preview">
+            <h2><a href="{{ .RelPermalink }}" aria-label="Read {{ .Title }}">{{ .Title }}</a></h2>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+            <div class="summary">{{ .Summary }}</div>
+            <a href="{{ .RelPermalink }}" class="read-more" aria-label="Continue reading {{ .Title }}">
+                Read more<span class="sr-only"> about {{ .Title }}</span> →
+            </a>
         </article>
         {{ end }}
     </div>

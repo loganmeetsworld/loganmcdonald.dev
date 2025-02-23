@@ -4,16 +4,41 @@ title = 'Logan McDonald'
 theme = 'custom'
 
 [params]
-  description = "Developer and writer sharing thoughts on engineering leadership, public service, and emerging technology."
+  description = "Logan McDonald's personal site - Exploring software development, design, and technology through thoughtful writing and experimentation."
   author = "Logan McDonald"
+  github = "@loganmeetsworld"
+  linkedin = "https://www.linkedin.com/in/mcdonaldlogan/"
+  googleSiteVerification = ""  # Get this from Google Search Console
+  
+  # SEO Keywords
+  keywords = [
+    "software development",
+    "web development",
+    "technology",
+    "programming",
+    "design",
+    "tech writing"
+  ]
   images = ["images/social-preview.svg"]
 
-[menu]
-  [[menu.main]]
-    name = "Home"
-    url = "/"
-    weight = 1
-  [[menu.main]]
-    name = "writing"
-    url = "/writing/"
-    weight = 2
+# Enable automatic sitemap generation
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+# Enable RSS feed
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  term = ["HTML", "RSS"]
+
+[outputFormats.RSS]
+  mediatype = "application/rss+xml"
+  baseName = "feed"
+
+[minify]
+  minifyOutput = true
+[taxonomies]
+  tag = "tags"
