@@ -217,3 +217,15 @@ footer {
     color: var(--secondary-color);
     font-size: 0.9rem;
 }
+/* Divider styles */
+.section-divider {
+    max-width: 800px;  /* Increased width */
+    margin: 6rem auto;
+    color: var(--secondary-color);
+    opacity: 0.8;
+}
+
+.section-divider svg {
+    width: 100%;
+    height: auto;
+}

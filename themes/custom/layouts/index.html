@@ -4,7 +4,9 @@
         <h1 class="title">{{ .Site.Title }}</h1>
         <p class="tagline">{{ .Content }}</p>
     </header>
-    <div class="divider"></div>
+
+    {{ partial "divider.html" . }}
+
     <section class="recent-posts">
         <h2>Recent Writing</h2>
         {{ $posts := where .Site.RegularPages "Section" "writing" }}

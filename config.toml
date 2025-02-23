@@ -6,7 +6,7 @@ theme = 'custom'
 [params]
   description = "Personal website and blog"
   author = "Logan McDonald"
-  tagline = "Engineering leader and civil servant building and operating software for the people."
+  tagline = "Engineering leader and civil servant building and operating software for the people. This is a place for me to share my thoughts on software, service, and emerging technology."
   
 [menu]
   [[menu.main]]
