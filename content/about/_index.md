@@ -25,6 +25,32 @@ experience:
       - "Worked in Ruby on Rails to deliver platform features to support the Kickstarter App"
       - "Implemented on call procedures and support rotation to maintain high uptime"
       - "Built next-generation metrics and monitoring pipeline using InfluxDB, Telegraf, and Grafana"
+skills:
+  - category: "Infrastructure"
+    items:
+      - "Terraform"
+      - "GitHub/Gitlab CI/CD"
+      - "AWS ECS"
+      - "Docker"
+  - category: "Coding"
+    items:
+      - "Python & Django"
+      - "Ruby & Rails"
+      - "JavaScript"
+      - "Golang"
+  - category: "Practices"
+    items:
+      - "Source control management"
+      - "Containerization"
+      - "CI/CD"
+      - "Agile/Scrum"
+      - "Test-driven development"
+  - category: "Focus Areas"
+    items:
+      - "Learning from incidents"
+      - "Managing software teams"
+      - "Technical writing"
+      - "Delivering software"
 ---
 
 I'm Logan. I am currently a Principal Consulting Software Engineer with [18F](18f.gov), a U.S. federal agency that advizes people in other agencies and local governments on building human-centered and resilient technology. I previously worked as a Staff Engineer in the private sector at companies like BuzzFeed and Kickstarter, where I concentrated on systems operability, safety, and release engineering. This is my technology-focussed blog. In my non-work time I love to challenge myself with long-distance running and learning new things. Some writing related to that may pop up from time to time!
