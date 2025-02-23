@@ -1,9 +1,3 @@
-I'll help you create a GitHub Action to automatically build and deploy your Hugo site to GitHub Pages.
-bashCopy# First, create the GitHub Actions directory structure
-mkdir -p .github/workflows
-
-# Create the workflow file
-cat > .github/workflows/hugo.yml << 'EOF'
 name: Deploy Hugo site to Pages
 
 on:
