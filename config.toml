@@ -1,4 +1,4 @@
-baseURL = 'https://yourusername.github.io/'
+baseURL = 'https://loganmcdonald.dev/'
 languageCode = 'en-us'
 title = 'Logan McDonald'
 theme = 'custom'
@@ -8,36 +8,12 @@ theme = 'custom'
   author = "Logan McDonald"
   tagline = "Engineering leader and civil servant building and operating software for the people."
   
-  # Featured Projects
-  [[params.featuredProjects]]
-    title = "Project One"
-    description = "A brief description of your first featured project"
-    url = "/projects/project-one"
-  
-  [[params.featuredProjects]]
-    title = "Project Two"
-    description = "A brief description of your second featured project"
-    url = "/projects/project-two"
-  
-  [[params.featuredProjects]]
-    title = "Project Three"
-    description = "A brief description of your third featured project"
-    url = "/projects/project-three"
-
 [menu]
   [[menu.main]]
     name = "Home"
     url = "/"
     weight = 1
   [[menu.main]]
-    name = "Work"
-    url = "/work/"
+    name = "writing"
+    url = "/writing/"
     weight = 2
-  [[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = 3
-  [[menu.main]]
-    name = "Contact"
-    url = "/contact/"
-    weight = 4

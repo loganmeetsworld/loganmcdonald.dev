@@ -4,5 +4,23 @@
         <h1 class="title">{{ .Site.Title }}</h1>
         <p class="tagline">{{ .Content }}</p>
     </header>
+
+    <section class="recent-posts">
+        <h2>Recent Writing</h2>
+        {{ $posts := where .Site.RegularPages "Section" "writing" }}
+        {{ range first 3 $posts }}
+        <article class="post-preview">
+            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <time>{{ .Date.Format "January 2, 2006" }}</time>
+            <div class="summary">
+                {{ .Summary }}
+            </div>
+            <a href="{{ .RelPermalink }}" class="read-more">Read more →</a>
+        </article>
+        {{ end }}
+        <div class="all-posts-link">
+            <a href="/writing">View all posts →</a>
+        </div>
+    </section>
 </div>
 {{ end }}

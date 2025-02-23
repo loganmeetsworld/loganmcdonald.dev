@@ -30,7 +30,7 @@ body {
 
 .title {
     font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 500;
     line-height: 1.2;
     margin-bottom: calc(var(--spacing-unit) * 2);
