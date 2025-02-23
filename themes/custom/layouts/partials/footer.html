@@ -1,8 +1,10 @@
 <footer>
-    <div class="footer-links">
-        <a href="https://github.com/loganmeetsworld" target="_blank">github</a>
-        <a href="https://www.linkedin.com/in/mcdonaldlogan/" target="_blank">linkedin</a>
-        <a href="https://bsky.app/profile/lmcdonald.bsky.social" target="_blank">bsky</a>
-    </div>
-    <!-- <p class="copyright">© {{ now.Format "2006" }} {{ .Site.Title }}</p> -->
+    <section class="connect-section">
+        <h2>Let's Connect</h2>
+        <div class="connect-links">
+            <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener" class="connect-link">GitHub</a>
+            <a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener" class="connect-link">LinkedIn</a>
+            <a href="{{ .Site.Params.bsky }}" target="_blank" rel="noopener" class="connect-link">Bsky</a>
+        </div>
+    </section>
 </footer>

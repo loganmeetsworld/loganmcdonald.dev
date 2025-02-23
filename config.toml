@@ -6,8 +6,9 @@ theme = 'custom'
 [params]
   description = "Logan McDonald's personal site - Exploring software development, design, and technology through thoughtful writing and experimentation."
   author = "Logan McDonald"
-  github = "@loganmeetsworld"
+  github = "https://github.com/loganmeetsworld"
   linkedin = "https://www.linkedin.com/in/mcdonaldlogan/"
+  bsky = "https://bsky.app/profile/loganmcdonald.dev"
   googleSiteVerification = ""  # Get this from Google Search Console
   
   # SEO Keywords
