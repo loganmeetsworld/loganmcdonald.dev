@@ -302,3 +302,61 @@ nav a:hover:after {
     color: #8A2BE2;
     transform: translateY(-2px);
 }
+/* 404 page styles */
+.error-container {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.error-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem;
+    margin: 0;
+    color: #8A2BE2;  /* Your purple color */
+    opacity: 0.8;
+}
+
+.error-message {
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    color: var(--secondary-color);
+}
+
+.error-actions {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.error-actions a {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #8A2BE2;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.error-actions a:hover {
+    background: #8A2BE2;
+    color: white;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .error-title {
+        font-size: 4rem;
+    }
+    
+    .error-message {
+        font-size: 1.25rem;
+    }
+    
+    .error-actions {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
