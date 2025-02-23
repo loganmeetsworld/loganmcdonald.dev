@@ -37,7 +37,7 @@ body {
 
 .title {
     font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
+    font-size: 4.75rem;
     font-weight: 500;
     line-height: 1.2;
     margin-bottom: calc(var(--spacing-unit) * 2);
@@ -219,10 +219,10 @@ footer {
 }
 /* Divider styles */
 .section-divider {
-    max-width: 800px;
+    max-width: 600px;
     margin: 6rem auto;
     color: #8A2BE2;  /* Brilliant purple (Blue Violet) */
-    opacity: 0.8;    /* Increased opacity to make color more vibrant */
+    opacity: 0.6;    /* Increased opacity to make color more vibrant */
 }
 
 .section-divider svg {
