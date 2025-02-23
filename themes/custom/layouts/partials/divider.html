@@ -1,5 +1,14 @@
 <div class="section-divider">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 60">
+    <!-- Define the gradient -->
+    <defs>
+      <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y1="0%">
+        <stop offset="0%" style="stop-color:#BF00FF" />
+        <stop offset="50%" style="stop-color:#8A2BE2" />
+        <stop offset="100%" style="stop-color:#9400D3" />
+      </linearGradient>
+    </defs>
+    
     <path d="M0 30 
              Q75 0, 150 30 
              T300 30
@@ -10,7 +19,7 @@
              T1050 30
              T1200 30" 
           fill="none" 
-          stroke="currentColor" 
-          stroke-width="1"/>
+          stroke="url(#wave-gradient)" 
+          stroke-width="1.5"/>
   </svg>
 </div>

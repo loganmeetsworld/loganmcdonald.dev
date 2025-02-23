@@ -219,10 +219,10 @@ footer {
 }
 /* Divider styles */
 .section-divider {
-    max-width: 800px;  /* Increased width */
+    max-width: 800px;
     margin: 6rem auto;
-    color: var(--secondary-color);
-    opacity: 0.8;
+    color: #8A2BE2;  /* Brilliant purple (Blue Violet) */
+    opacity: 0.8;    /* Increased opacity to make color more vibrant */
 }
 
 .section-divider svg {
