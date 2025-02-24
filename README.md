@@ -1,3 +1,3 @@
 # loganmcdonald.dev
 
-A personal site for writing. Written with hugo. 
+A personal site. Written with hugo with help from claude.ai.

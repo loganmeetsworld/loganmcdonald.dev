@@ -8,8 +8,8 @@
     {{ partial "divider.html" . }}
 
     <section class="recent-posts">
-        <h2>Recent Writing</h2>
-        {{ $posts := where .Site.RegularPages "Section" "writing" }}
+        <h2>Recent Notes</h2>
+        {{ $posts := where .Site.RegularPages "Section" "notes" }}
         {{ range first 3 $posts }}
         <article class="post-preview">
             <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
@@ -21,7 +21,7 @@
         </article>
         {{ end }}
         <div class="all-posts-link">
-            <a href="/writing">View all posts →</a>
+            <a href="/notes">View all notes →</a>
         </div>
     </section>
 </div>
