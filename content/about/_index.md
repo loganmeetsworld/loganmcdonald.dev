@@ -1,8 +1,12 @@
 ---
 title: "About Me"
-intro: "Software programmer focussed on building resilient software, navigating bureaucracy, and enabling teams."
+intro: "Software engineering leader focussed on building resilient software, navigating bureaucracy, and enabling teams."
 experience:
-  - period: "2021 - Present"
+  - period: "2025 - Present"
+    role: "Expert Consultant"
+    company: "Federal Student Aid, an office of the Department of Education"
+
+  - period: "2021 - 2025"
     role: "Principal Consulting Software Engineer"
     company: "Federal Government, General Services Administration, 18F"
     highlights:
@@ -53,4 +57,4 @@ skills:
       - "Delivering software"
 ---
 
-I'm Logan. I am currently a Principal Consulting Software Engineer with [18F](18f.gov), a U.S. federal agency that advizes people in other agencies and local governments on building human-centered and resilient technology. I previously worked as a Staff Engineer in the private sector at companies like BuzzFeed and Kickstarter, where I concentrated on systems operability, safety, and release engineering. Here you can find musings about technology and work. In my non-work time I love to challenge myself with long-distance running, cooking, and learning new things. Some writing related to that may pop up from time to time!
+I'm Logan. I am currently an expert consultant providing advice on reliability and software development to the federal government, specifically with Federal Student Aid at the Department of Education. I have extensive experience in teaching human centered design, software engineering practices, and safety to federal agencies as an engineering leader at [18F](18f.org). I have also worked as a Staff Engineer in the private sector at companies like BuzzFeed and Kickstarter, where I concentrated on systems operability, safety, and release engineering. Here you can find musings about technology and work. In my non-work time I love to challenge myself with long-distance running, cooking, and learning new things. Some writing related to that may pop up from time to time!
